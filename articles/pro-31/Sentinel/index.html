@@ -1,0 +1,158 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<title>Strasbourg - Built-up land</title>
+		<link rel="stylesheet" href="ol-3.18.2/ol.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Assistant|Roboto+Slab" rel="stylesheet">
+		<link rel="stylesheet" href="stylesheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="ol-3.18.2/ol.js"></script>
+	</head>
+	<body>
+		<div class="top-pad">
+			<h1>The extent of built-up land in Strasbourg in 2016</h1>
+		</div>
+
+		<div id="map">
+			<div id="information" class="pushed"><i class="fa fa-info" aria-hidden="true"></i></div>
+			<div id="tooltip">
+				<p>These classification maps were produced using a Sentinel-2 scene (08/23/2016) and Copernicus data (HRL Imperviousness, 2012).</p>
+				<p>Two sampling methods (balanced & unbalanced) were used to produce samples, later used by a Random Forest classifier, in order to differentiate between land cover classes.</p>
+				<p>The sample size was set to 0.5%</p>
+				<hr>
+				<p>F-values :</p>
+				<table>
+					<tr>
+						<th id="fBalanced">Balanced</th>
+						<th id="fUnbalanced">Unbalanced</th>
+					</tr>
+					<tr>
+						<td>0.954</td>
+						<td>0.932</td>
+					</tr>
+				</table>
+				<br>
+			</div>
+			<div id="layer-switch">
+				<p>Select layer(s)</p>
+				<hr>
+				<div class="checkbox-wrap">
+					<div class="checkbox">
+						<input class="layer-checkbox" id="oR11bR" type="checkbox" name="geojson-layer">
+						<label for="oR11bR">Balanced</label>
+					</div>
+					<div class="checkbox">
+						<input class="layer-checkbox" id="oR11uR" type="checkbox" name="geojson-layer">
+						<label for="oR11uR">Unbalanced</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var map = new ol.Map({
+				target: 'map',
+				layers: [
+					new ol.layer.Tile({
+						source: new ol.source.XYZ({
+							url: 'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.	eyJ1Ijoid29vdGFuNjciLCJhIjoiY2lxeG1id2J4MDA0amh0bmo2b3ZrM284cyJ9.dZofdSG7bDjCRNKQQrYrPg'
+						})
+					})
+				],
+				view: new ol.View({
+					center: ol.proj.fromLonLat([7.74114365799,48.5989629521]),
+					zoom: 10.7
+				}),
+				controls: ol.control.defaults().extend([
+					new ol.control.ScaleLine()
+				])
+			});
+
+			var oR11bR = new ol.layer.Vector({
+				source: new ol.source.Vector({
+					url: 'topojson/oR11bR.json',
+					format: new ol.format.TopoJSON({
+						defaultDataProjection: 'EPSG:4326',
+						projection: 'EPSG:3857'
+					})
+				}),
+				title: 'oR11bR',
+				style: new ol.style.Style({
+					fill: new ol.style.Fill({
+						color: 'rgba(255,255,255,0.75)'
+					})
+				})
+			});
+
+			var oR11uR = new ol.layer.Vector({
+				source: new ol.source.Vector({
+					url: 'topojson/oR11uR.json',
+					format: new ol.format.TopoJSON({
+						defaultDataProjection: 'EPSG:4326',
+						projection: 'EPSG:3857'
+					})
+				}),
+				title: 'oR11uR',
+				style: new ol.style.Style({
+					fill: new ol.style.Fill({
+						color: 'rgba(220,53,34,0.75)'
+					})
+				})
+			});
+
+			var strasbg = new ol.layer.Vector({
+				source: new ol.source.Vector({
+					url: 'topojson/strasbg.json',
+					format: new ol.format.TopoJSON({
+						defaultDataProjection :'EPSG:4326', 
+						projection: 'EPSG:3857'
+					})
+				}),
+				name: 'strasbg_WGS84',
+				style: new ol.style.Style({
+					stroke: new ol.style.Stroke({
+						color: 'rgba(255,255,255,1)',
+						width: 1
+					}),
+					fill: new ol.style.Fill({
+						color: 'rgba(255,255,255,0)'
+					})
+				})
+			});
+
+			strasbg.setZIndex(100);
+			map.addLayer(strasbg);
+
+			$(document).ready(function() {
+				$('.layer-checkbox').prop('checked',false);
+				$('#oR11bR').prop('checked',true);
+				$('#information').css('background-color', '#DC3522');
+				$('#tooltip').toggle();
+				map.addLayer(oR11bR);
+			});
+
+			$('.layer-checkbox').on('change', function() {
+				var layerId = $(this).attr('id');
+				if ($(this).is(':checked')) {
+					map.addLayer(eval(layerId));
+				} else {
+					map.removeLayer(eval(layerId));
+				}
+			});
+
+			$('#information').on('click',function(){
+				$('#tooltip').toggle();
+				var informationStatus = $('#information').attr('class');
+				if (informationStatus=='pushed') {
+					$(this).removeClass('pushed');
+					$(this).css("background-color", "#1E1E20")
+				} else if (informationStatus!='pushed') {
+					$(this).addClass('pushed');
+					$(this).css("background-color", "#DC3522")
+				}
+			});
+		</script>
+	</body>
+</html>

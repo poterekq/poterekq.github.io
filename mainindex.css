@@ -1,0 +1,477 @@
+/* Keyframes for background gradients */
+@-webkit-keyframes bggrad {
+  0% { background-color: #a6c1ee; }
+  33% { background-color: #e3ffff; }
+  66% { background-color: #fcb69f; }
+  100% { background-color: #a6c1ee; }
+}
+
+@-moz-keyframes bggrad {
+  0% { background-color: #a6c1ee; }
+  33% { background-color: #e3ffff; }
+  66% { background-color: #fcb69f; }
+  100% { background-color: #a6c1ee; }
+}
+
+@keyframes bggrad {
+  0% { background-color: #a6c1ee; }
+  33% { background-color: #e3ffff; }
+  66% { background-color: #fcb69f; }
+  100% { background-color: #a6c1ee; }
+}
+
+::selection {
+  background: black; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: black; /* Gecko Browsers */
+  color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+    .col-pad {
+        display: none;
+    }
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #fef9d7; /* fallback color if gradients are not supported */
+    -webkit-animation: bggrad 20s linear infinite;
+    -moz-animation: bggrad 20s linear infinite;
+    animation: bggrad 20s linear infinite;
+    background-image: -webkit-linear-gradient(-45, transparent, #fef9d7); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+    background-image:    -moz-linear-gradient(-45, transparent, #fef9d7); /* For Firefox (3.6 to 15) */
+    background-image:      -o-linear-gradient(-45, transparent, #fef9d7); /* For old Opera (11.1 to 12.0) */
+    background-image:      linear-gradient(-45deg, transparent, #fef9d7); /* Standard syntax; must be last */
+    font-family: 'Cabin', sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  word-wrap: break-word;
+}
+
+.nav-container, .main-container {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-container { flex: 1; order: 1; }
+
+.main-container { flex: 4; order: 2; }
+
+.col-pad { flex: 1; }
+
+.pad0 { order: 0; }
+
+.pad3 { order: 3; }
+
+.nav, .main {
+  padding: 1vw;
+  background-color: white;
+  border: 2px solid #000;
+}
+
+.nav {
+  margin: 1vw 0.5vw 1vw 1vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1vw;
+}
+
+.main {
+  margin: 1vw 1vw 1vw 0.5vw;
+  height: calc(100% - 4.3vw);
+}
+
+.nav img {
+  width: auto;
+  height: auto;
+  max-width:100%;
+  max-height:100%;
+  margin:auto;
+  display:block;
+  outline: 2px solid black;
+  outline-offset: -2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed', serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 1vw;
+}
+
+h2 {
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5em;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+h2:not(:first-child) {
+    margin-top: 1em;
+}
+
+h2:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 2px solid black;
+  margin: auto;
+  margin-left: 1vw;
+}
+
+h3 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+h3 {
+  display: flex;
+  flex-direction: row;
+}
+
+h3:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 2px dotted black;
+  margin: auto;
+  margin-left: 1vw;
+}
+
+.nav p, .nav a {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.nav a:hover:before {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  margin-right: 5px;
+  border: 2px solid black;
+  border-radius: 100%;
+  -webkit-animation: bggrad 2s linear infinite;
+  -moz-animation: bggrad 2s linear infinite;
+  animation: bggrad 2s linear infinite;
+}
+
+.nav .nav-italic {
+  font-style: italic;
+}
+
+#namesep {
+  display: block;
+  border: 1px solid black;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.profil-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 -1vw;
+}
+
+.profil-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  min-width: 256px;
+}
+
+.col-left {
+  padding: 0 1vw 0 1vw;
+}
+
+.col-right {
+  padding: 0 0 0 1vw;
+}
+
+.ext-link {
+  text-decoration: none;
+  padding: 2px 6px;
+  background-color: black;
+  color: white;
+  border-radius: 100px;
+  transition: all 1s ease-out;
+}
+
+.ext-link:hover {
+  -webkit-animation: bggrad 2s linear infinite;
+  -moz-animation: bggrad 2s linear infinite;
+  animation: bggrad 2s linear infinite;
+  color: black;
+  transition: all 1s ease-out;
+}
+
+.portfolio-row {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+.portfolio-column {
+  background-color: gray;
+  width: 350px;
+  height: 250px;
+  color: white;
+  margin: 1vw;
+  text-align: left;
+  position: relative;
+  border: 2px solid black;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.portfolio-nom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 0px 2px rgb(0,0,0);
+  -moz-box-shadow: 0px 0px 0px 2px rgb(0,0,0);
+  box-shadow: 0px 0px 0px 2px rgb(0,0,0);
+}
+
+.portfolio-nom p {
+  padding: 5px;
+  margin: 0;
+}
+
+.doc-type {
+  position: absolute;
+  top: 0;
+  margin: 5px;
+  padding: 5px;
+  font-size: 0.75em;
+  line-height: 0.75em;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
+.desc {
+  font-style: italic;
+}
+
+.bg-img {
+  position: absolute;
+  bottom: 0;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.bg-img:hover {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition: all 0.5s;
+}
+
+#img-pro-11 {
+  background: white url(./articles/pro-11/Thumbnail_PtolemyGeography.jpg) center;
+  -webkit-filter: grayscale(100%) blur(2px);
+  filter: grayscale(100%) blur(2px);
+}
+
+#img-pro-11:hover {
+  -webkit-filter: grayscale(100%) blur(0px);
+  filter: grayscale(100%) blur(0px);
+  transition: all 0.5s;
+}
+
+#img-pro-21 {
+  background: white url(./articles/pro-21/Thumbnail_Photogram.png) center;
+}
+
+#img-pro-31 {
+  background: white url(./articles/pro-31/Thumbnail_Sentinel.png) center;
+  background-size: cover;
+}
+
+#img-pro-41 {
+  background: white url(./articles/pro-41/Thumbnail_Spot.png) center;
+  background-size: cover;
+}
+
+#img-uni-11 {
+  background: white url(./articles/uni-11/Thumbnail_StageColorisation_Memoire.png) center;
+  background-size: cover;
+}
+
+#img-uni-21 {
+  background: white url(./articles/uni-21/Thumbnail_StageSoutenance.png) bottom center;
+  background-size: cover;
+}
+
+#img-uni-31 {
+  background: white url(./articles/uni-31/Thumbnail_GEOLabMemoire.png) center;
+}
+
+#img-uni-41 {
+  background: white url(./articles/uni-41/Thumbnail_GEOLabSoutenance.jpg) center 90%;
+}
+
+#img-uni-51 {
+  background: white url(./articles/uni-51/Thumbnail_MemoireTER.png) 30% center;
+}
+
+#img-uni-61 {
+  background: white url(./articles/uni-61/Thumbnail_SoutenanceTER.png) center;
+  background-size: cover;
+}
+
+#img-uni-71 {
+  background: white url(./articles/uni-71/Thumbnail_Houston.png) center right;
+  background-size: cover;
+}
+
+#img-uni-81 {
+  background: white url(./articles/uni-81/ItinerairesVelo-Parcs_Presentation.png) center;
+  background-size: cover;
+}
+
+#img-uni-91 {
+  background: white url(./articles/uni-91/ItinerairesVelo-Parcs_PPV.png) center;
+  background-size: cover;
+}
+
+#img-uni-101 {
+  background: white url(./articles/uni-101/Thumbnail_TNU.png) center;
+  background-size: cover;
+}
+
+#img-uni-111 {
+  background: white url(./articles/uni-111/Thumbnail_SemisPoints.png) center;
+  background-size: cover;
+}
+
+#img-uni-121 {
+  background: white url(./articles/uni-121/_2016_IntroGeo_ParcEnergetique.png) right center;
+  background-size: cover;
+}
+
+#img-uni-131 {
+  background: white url(./articles/uni-131/_2016_TraitementSignalColmarNDVI.jpg) left center;
+  background-size: cover;
+}
+
+#img-uni-141 {
+  background: white url(./articles/uni-141/L3_StageHydro_ProfilsLitho.png) left center;
+  background-size: cover;
+}
+
+#img-uni-151 {
+  background: white url(./articles/uni-151/Thumbnail_Hildesheim.png) center;
+  background-size: cover;
+}
+
+#img-uni-161 {
+  background: white url(./articles/uni-161/Thumbnail_OCS.png) center;
+  background-size: cover;
+}
+
+#img-uni-171 {
+  background: white url(./articles/uni-171/MutationsTerritoriales.png) center;
+  background-size: cover;
+}
+
+#img-uni-181 {
+  background: white url(./articles/uni-181/oursins.png) center;
+  background-size: cover;
+}
+
+#img-uni-191 {
+  background: white url(./articles/uni-191/AT15.png) center;
+  background-size: cover;
+}
+
+#img-uni-201 {
+  background: white url(./articles/uni-201/bcn_luttes.jpg) center;
+  background-size: cover;
+}
+
+#img-uni-211 {
+  background: white url(./articles/uni-211/bcn_artificialisation.jpg) center;
+  background-size: cover;
+}
+
+#img-uni-221 {
+  background: white url(./articles/uni-221/risquesMontagnards.png) center;
+  background-size: cover;
+}
+
+#img-uni-231 {
+  background: white url(./articles/uni-231/Carto_RegressionLinMul.png) center;
+  background-size: cover;
+}
+
+#img-uni-241 {
+  background: white url(./articles/uni-241/Thumbnail_RegLin.png) center;
+  background-size: cover;
+}

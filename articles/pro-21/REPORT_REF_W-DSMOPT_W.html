@@ -1,0 +1,333 @@
+<!doctype html>
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>Strasbg_DSMOPT.html</title>
+            <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+            <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        </head>
+
+        <body>
+            <section id="body" class="width">
+                <aside id="sidebar" class="column-left">
+                    <header>
+                        <h1><a href="#">Strasbg<br>DSM-Opt</a></h1>
+                        <h2>13/02/2018 16:12:15</h2>
+                    </header>
+                    <nav id="mainnav">
+                        <ul>
+                            <li class="selected-item"><a href="#P1">General information</a></li>
+                            <li><a href="#P2">Basic evaluation</a></li>
+                            <li><a href="#P3">Advanced evaluation - Global</a></li>
+                            <li><a href="#P4">Advanced evaluation - Local</a></li>
+                        </ul>
+                    </nav>
+                </aside><section id="content" class="column-right">
+    <article>
+        <h2 id="P1">1. General information on products</h2>
+        <br>
+        <p>Path to reference product: /media/quentinp/OS/Users/poqu6/Desktop/MNS_TEST/REF_W.tif<br>Path to evaluated product: /media/quentinp/OS/Users/poqu6/Desktop/MNS_TEST/DSMOPT_W.tif</p>
+        <br>
+        <img style="text-align: center; width: 50%; height: 50%" src="FIGURES/PNG/elevation.png">
+        <br>
+        <p class="figures">Figure 1: Elevations (m) for evaluated and reference products.</p>
+        <br>
+        <p>Products share the same geometric properties (resolution, extent) and were both masked using the union of their NaN pixels.</p>
+        <br>
+        <p>Number of columns: 9640</p>
+        <p>Number of rows: 9115</p>
+        <p>Number of pixels: 87868600</p>
+        <p>Spatial resolution in CRS units: 0.5</p>
+        <br>
+        <p>Projected coordinate system: None</p>
+        <p>Geographic coordinate system: None</p>
+        <p>Top-left corner coordinates (x, y) in CRS units: 2045195.42497, 7276858.81729</p>
+    </article><article>
+    <h2 id="P2">2. Basic evaluation of vertical accuracy</h2>
+    <br>
+    <h3>2.1. Basic statistics</h3>
+    <br>
+    <img style="text-align: center; width: 50%; height: 50%" src="FIGURES/PNG/elevation_hist.png">
+    <br>
+    <p class="figures">Figure 2: Distribution of elevations (m) for evaluated and reference products.</p>
+    <br><table>
+    <tr>
+        <th></th>
+        <th>Reference</th>
+        <th>Evaluated</th>
+    </tr>
+    <tr>
+        <td class="row-title">Minimum</td>
+        <td>123.66000366210938</td>
+        <td>99.03999328613281</td>
+    </tr>
+    <tr>
+        <td class="row-title">Maximum</td>
+        <td>222.7100067138672</td>
+        <td>235.0399932861328</td>
+    </tr>
+    <tr>
+        <td class="row-title">Range</td>
+        <td>99.05000305175781</td>
+        <td>136.0</td>
+    </tr>
+    <tr>
+        <td class="row-title">Mean</td>
+        <td>146.0907440185547</td>
+        <td>146.2271728515625</td>
+    </tr>
+    <tr>
+        <td class="row-title">Median</td>
+        <td>144.47999572753906</td>
+        <td>145.0399932861328</td>
+    </tr>
+    <tr>
+        <td class="row-title">Std</td>
+        <td>6.450394153594971</td>
+        <td>6.067461967468262</td>
+    </tr>
+    <tr>
+        <td class="row-title">RMSE</td>
+        <td colspan="2">3.9241248480610396</td>
+    </tr>
+    <tr>
+        <td class="row-title">NMAD</td>
+        <td colspan="2">1.5270761901855467</td>
+    </tr>
+    </table>
+    <br>
+    <p class="figures">Table 1: Statistics for elevations (m) of evaluated and reference products.</p>
+    <br><h3>2.2. Statistical tests</h3>
+    <br>
+    <p>The <b>Pearson test</b> calculates a Pearson correlation coefficient and the p-value for <b>testing non-correlation</b>.
+    The Pearson correlation coefficient measures the linear relationship between two data sets.
+    Strictly speaking, Pearson’s correlation requires that each dataset be normally distributed, and not necessarily zero-mean.</p>
+    <br>
+    <p>The <b>Spearman test</b> calculates a Spearman rank-order correlation coefficient and the p-value for <b>testing for non-correlation</b>.
+    It is a non-parametric measure of the monotonicity of the relationship between two data sets.
+    Unlike the Pearson correlation, the Spearman correlation does not assume that both datasets are normally distributed.</p>
+    <br>
+    <p>The <b>Student test</b> calculates the T-test for the means of two independent samples of scores.
+    This is a two-sided test for the <b>null hypothesis that 2 independent samples have identical average values</b>.
+    This test assumes that the populations have identical variances by default.</p>
+    <br>
+    <p>The <b>Levene test</b> tests the <b>null hypothesis that all input samples are from populations with equal variances</b>.
+    Levene’s test is an alternative to Bartlett’s test bartlett in the case where there are significant deviations from normality.</p>
+    <br>
+    <p><b>Bartlett’s test</b> tests the <b>null hypothesis that all input samples are from populations with equal variances</b>.
+    For samples from significantly non-normal populations, Levene’s test levene is more robust.</p>
+    <br><p>Pearson test: value = 0.8053832650184631 ; p-value = 0.0</p>
+    <p>Spearman test: value = 0.8112819677527728 ; p-value = 0.0</p>
+    <p>Student test: value = -142.43965203338183 ; p-value = 0.0</p>
+    <p>Levene test: value = 126877.27590651513 ; p-value = 0.0</p>
+    <p>Bartlett test: value = 319984.6380274133 ; p-value = 0.0</p>
+</article><article>
+    <h2 id="P3">3. Advanced evaluation of vertical accuracy - Global analysis</h2>
+    <br>
+    <p>Global analysis of vertical accuracy is performed through the computation of reference and assessed elevations difference. The following formula was used:</p>
+    <br>
+    <p class="formula">dh = h<sub>ref</sub> - h<sub>eval</sub></p>
+    <br>
+    <img style="text-align: center; width: 50%; height: 50%" class="figures" src="FIGURES/PNG/rdiff.png">
+    <br>
+    <p>Figure 3: Elevation difference (m) between evaluated and reference products.</p>
+    <br>
+    <p>An analysis of absolute and relative elevations differences allows for a better understanding of the overall structure of the assessed product.</p>
+    <br><img style="text-align: center; width: 50%; height: 50%" src="FIGURES/PNG/rdiff_hist.png">
+    <br>
+    <p class="figures">Figure 4: Distribution of absolute and relation elevations differences (m).</p>
+    <br><table>
+    <tr>
+        <th></th>
+        <th>Relative difference</th>
+        <th>Absolute difference</th>
+    </tr>
+    <tr>
+        <td class="row-title">Minimum</td>
+        <td>-96.92999267578125</td>
+        <td>0.0</td>
+    </tr>
+    <tr>
+        <td class="row-title">Maximum</td>
+        <td>76.43000793457031</td>
+        <td>96.92999267578125</td>
+    </tr>
+    <tr>
+        <td class="row-title">Range</td>
+        <td>173.36000061035156</td>
+        <td>96.92999267578125</td>
+    </tr>
+    <tr>
+        <td class="row-title">Mean</td>
+        <td>-0.13682155311107635</td>
+        <td>2.120612382888794</td>
+    </tr>
+    <tr>
+        <td class="row-title">Median</td>
+        <td>0.0900115966796875</td>
+        <td>1.0300140380859375</td>
+    </tr>
+    <tr>
+        <td class="row-title">Std</td>
+        <td>3.921741485595703</td>
+        <td>3.3017868995666504</td>
+    </tr>
+    <tr>
+        <td class="row-title">Skewness</td>
+        <td>0.025427279993891716</td>
+        <td>4.819879531860352</td>
+    </tr>
+    <tr>
+        <td class="row-title">Kurtosis</td>
+        <td>28.653207778930664</td>
+        <td>44.979305267333984</td>
+    </tr>
+    </table>
+    <br>
+    <p class="figures">Table 2: Statistics for absolute and relative elevations differences (m).</p>
+    <br><h3>3.2. Statistical tests</h3>
+    <br>
+    <p>The <b>normal test</b> tests the <b>null hypothesis that a sample comes from a normal distribution</b>.
+    It is based on D’Agostino and Pearson’s test that combines skew and kurtosis to produce an omnibus test of normality.</p>
+    <br>
+    <p>The <b>Kolmogorov-Smirnov test</b> performs a test of the distribution G(x) of an observed random variable against a given distribution F(x).
+    Under the <b>null hypothesis the two distributions are identical</b>, G(x)=F(x). The KS test is only valid for continuous distributions.</p>
+    <br>
+    <p>The <b>Shapiro-Wilk test</b> tests the <b>null hypothesis that the data was drawn from a normal distribution</b>.</p>
+    <br>
+    <p>The <b>kurtosis test</b> tests the <b>null hypothesis that the kurtosis of the population from which the sample was drawn is that of the normal distribution</b>: kurtosis = 3(n-1)/(n+1).</p>
+    <br>
+    <p>The <b>skewness test</b> tests the <b>null hypothesis that the skewness of the population that the sample was drawn from is the same as that of a corresponding normal distribution</b>.</p>
+    <br><h4>3.2.1. Relative elevations difference</h4>
+    <br>
+    <p>Normal test: value = 23771770.882894505 ; p-value = 0.0</p>
+    <p>Kolmogorov-Smirnov test: value = 0.137348896110316 ; p-value = 0.0</p>
+    <p>Shapiro test: value = 0.7822747230529785 ; p-value = 0.0</p>
+    <p>Kurtosis test: value = 4874.685864428281 ; p-value = 0.0</p>
+    <p>Skewness test: value = 95.96148205195134 ; p-value = 0.0</p>
+    <br><h4>3.2.2. Absolute elevations difference</h4>
+    <br>
+    <p>Normal test: value = 85626474.11992714 ; p-value = 0.0</p>
+    <p>Kolmogorov-Smirnov test: value = 0.5009586386633237 ; p-value = 0.0</p>
+    <p>Shapiro test: value = 0.6692779064178467 ; p-value = 0.0</p>
+    <p>Kurtosis test: value = 5235.419979034963 ; p-value = 0.0</p>
+    <p>Skewness test: value = 7629.996838993362 ; p-value = 0.0</p>
+    <br><h3>3.3. Topographic attributes</h3>
+    <br>
+    <p>In order to assess the quality of the evaluated product, elevation difference values can be compared to various topographic attributes, computed using the reference product.</p>
+    <br><h4>3.3.1. Slope</h4>
+    <br>
+    <img style="text-align: center; width: 50%; height: 50%" src="FIGURES/PNG/slope.png">
+    <br>
+    <p class="figures">Figure 5: Slopes (deg) for evaluated and reference products.</p>
+    <br>
+    <img style="text-align: center; width: 50%; height: 50%" src="FIGURES/PNG/slope_hist.png">
+    <br>
+    <p class="figures">Figure 6: Distribution of slope values (deg) for evaluated and reference products.</p>
+    <br>
+    <p><b>Correlation analysis</b></p>
+    <p>Reference slopes and absolute difference: value = 0.09205159544944763 ; p-value = 0.0</p>
+    <p>Reference slopes and relative difference: value = 0.25396060943603516 ; p-value = 0.0</p>
+    <br><h4>3.3.2. Aspect</h4>
+    <br>
+    <img style="text-align: center; width: 50%; height: 50%" src="FIGURES/PNG/aspect.png">
+    <br>
+    <p class="figures">Figure 7: Aspects (deg) for evaluated and reference products.</p>
+    <br>
+    <img style="text-align: center; width: 50%; height: 50%" src="FIGURES/PNG/aspect_hist.png">
+    <br>
+    <p class="figures">Figure 8: Distribution of aspects values (deg) for evaluated and reference products.</p>
+    <br>
+    <p><b>Correlation analysis</b></p>
+    <p>Reference aspects and absolute difference: value = 0.008389640599489212 ; p-value = 0.0</p>
+    <p>Reference aspects and relative difference: value = 0.008540753275156021 ; p-value = 0.0</p>
+    </article><article>
+    <h2 id="P4">4. Advanced evaluation of vertical accuracy - Local analysis</h2>
+    <br>
+    <p>Local analysis can be performed by using discrete data and analyzing the way errors distribute themselves amongst classes. Various attributes are used and discretized in order to assess the quality of the evaluated product: slope, aspect, roughness, fractal dimension, land use and land cover...</p>
+    <br>
+    <p>Only topographic attributes computed using reference product have been reclassified.</p>
+    <br><h3>4.1. Slope</h3>
+    <br>
+    <p>Classes: [1, 2, 3, 4, 5, 6, 7]</p>
+    <p>Thresholds: [2.0, 4.0, 8.0, 16.0, 35.0, 55.0]</p>
+    <p>Inclusive thresholds: yes</p>
+    <p>NaN value placeholder: 0</p>
+    <br>
+    <img style="text-align: center; width: 35%; height: 35%" src="FIGURES/PNG/rslope.png">
+    <br>
+    <p class="figures">Figure 9: Reclassified slopes.</p>
+    <br>
+    <img style="text-align: center; width: 35%; height: 35%" src="FIGURES/PNG/rslope_bar.png">
+    <br>
+    <p class="figures">Figure 10: Bar plot for reclassified slopes.</p>
+    <br><table>
+    <tr>
+        <th colspan="3">Slope</th>
+    </tr>
+    <tr>
+        <th>Class</th>
+        <th>RMSE</th>
+        <th>NMAD</th>
+    </tr><tr><td>1</td><td>3.1143099474599385</td><td>1.052633331298828</td></tr><tr><td>2</td><td>2.967296148253471</td><td>1.097132144165039</td></tr><tr><td>3</td><td>2.9949847034923303</td><td>1.1267904785156249</td></tr><tr><td>4</td><td>3.0500774972576603</td><td>1.2009023803710936</td></tr><tr><td>5</td><td>3.294957980534875</td><td>1.438123809814453</td></tr><tr><td>6</td><td>3.464223545858465</td><td>1.808773809814453</td></tr><tr><td>7</td><td>5.289296950230038</td><td>3.054175003051758</td></tr></table>
+    <br>
+    <p class="figures">Table 3: Error distribution amongst slopes classes.</p>
+    <br><h3>4.2. Aspect</h3>
+    <br>
+    <p>Classes: [1, 2, 3, 4, 5, 6, 7, 8, 1]</p>
+    <p>Thresholds: [22.5, 67.5, 112.5, 157.5, 202.5, 247.5, 292.5, 337.5, 360.0]</p>
+    <p>Inclusive thresholds: yes</p>
+    <p>NaN value placeholder: 0</p>
+    <br>
+    <img style="text-align: center; width: 35%; height: 35%" src="FIGURES/PNG/raspect.png">
+    <br>
+    <p class="figures">Figure 11: Reclassified aspects.</p>
+    <br>
+    <img style="text-align: center; width: 35%; height: 35%" src="FIGURES/PNG/raspect_bar.png">
+    <br>
+    <p class="figures">Figure 12: Bar plot for reclassified aspects.</p>
+    <br><table>
+    <tr>
+        <th colspan="3">Aspect</th>
+    </tr>
+    <tr>
+        <th>Class</th>
+        <th>RMSE</th>
+        <th>NMAD</th>
+    </tr><tr><td>1</td><td>3.819353031238252</td><td>1.408465475463867</td></tr><tr><td>2</td><td>3.8187927571758125</td><td>1.438123809814453</td></tr><tr><td>3</td><td>3.7002575494532435</td><td>1.5122357116699219</td></tr><tr><td>4</td><td>3.7195676443041403</td><td>1.5418940460205077</td></tr><tr><td>5</td><td>3.7854083040616686</td><td>1.5567345245361328</td></tr><tr><td>6</td><td>3.816236565808488</td><td>1.5270761901855467</td></tr><tr><td>7</td><td>3.7533952233240315</td><td>1.5567119018554687</td></tr><tr><td>8</td><td>3.8444529950013773</td><td>1.5122583343505858</td></tr></table>
+    <br>
+    <p class="figures">Table 4: Error distribution amongst aspects classes.</p>
+    <br><h3>4.3. LULC</h3>
+    <br>
+    <p>Occupation du sol du LIVE (2012)
+    <p>Classes: [0 1 2 3 4 5 6 7 8]</p>
+    <p>1 Bâti ; 2 Surface route ; 3 Voie ferrée ; 4 Surface agricole ; 5 Surface arborée ; 6 Surface herbacée ; 7 Eau ; 8 Autre</p>
+    <p>NaN value placeholder: 0</p>
+    <br>
+    <img style="text-align: center; width: 35%; height: 35%" src="FIGURES/PNG/lulc.png">
+    <br>
+    <p class="figures">Figure 13: LULC classes.</p>
+    <br>
+    <img style="text-align: center; width: 35%; height: 35%" src="FIGURES/PNG/lulc_bar.png">
+    <br>
+    <p class="figures">Figure 14: Bar plot for LULC classes.</p>
+    <br><table>
+    <tr>
+        <th colspan="3">LULC</th>
+    </tr>
+    <tr>
+        <th>Class</th>
+        <th>RMSE</th>
+        <th>NMAD</th>
+    </tr><tr><td>1</td><td>3.925124077400066</td><td>1.4084880981445311</td></tr><tr><td>2</td><td>3.4224361662797427</td><td>1.11195</td></tr><tr><td>3</td><td>2.738460810346031</td><td>1.1712440460205078</td></tr><tr><td>4</td><td>1.8541128750501326</td><td>0.8450702362060546</td></tr><tr><td>5</td><td>4.865835491185121</td><td>2.861407141113281</td></tr><tr><td>6</td><td>2.884342402408462</td><td>1.1860619018554688</td></tr><tr><td>7</td><td>11.678798361028461</td><td>4.462617855834961</td></tr><tr><td>8</td><td>3.7111844584186295</td><td>1.452941665649414</td></tr></table>
+    <br>
+    <p class="figures">Table 5: Error distribution amongst LULC classes.</p>
+    <br></article>
+                <footer class="clear">
+                    <p>Processing chain by Quentin Poterek, 2018. University of Strasbourg.</p>
+                </footer>
+            </section>
+            <div class="clear"></div>
+        </section>
+    </body>
+</html>

@@ -1,7 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/earth-icon-vector.png">
+  <link rel="stylesheet" type="text/css" href="mainindex.css">
+  <link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+  <title>Quentin Poterek</title>
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+  <div class="flex-container">
+
+    <div class="col-pad pad0"></div>
+
+    <div class="flex-item nav-container">
+      <div class="nav">
+        <img src="images/avatar.jpg" alt="avatar" id="avatar">
+        <h1>Quentin Poterek</h1>
+        <hr id="namesep">
+        <a href="#profil">Profil</a><br>
+        <a href="#portfolio">Portfolio</a><br>
+        <a class="nav-italic" href="#professionnel">&nbsp;Professionnel</a><br>
+        <a class="nav-italic" href="#universite">&nbsp;Universitaire</a><br>
+        <a class="nav-italic" href="#personnel">&nbsp;Personnel</a><br>
+        <a href="#interets">Centres d'intérêt</a>
+      </div>
+    </div>
+
+    <div class="flex-item main-container">
+      <div class="main">
+
+        <!-- Profil -->
+        <h2 id="profil">Profil</h2>
+
+        <p>Bonjour, je m'appelle Quentin, 24 ans.</p>
+        <div class="profil-row">
+          <div class="profil-column col-left">
+            <p>Géographe et géomaticien, j'ai effectué mon parcours universitaire à Strasbourg, en France.
+               Après trois ans de licence à la Faculté de Géographie et d'Aménagement, mes études et centres d'intérêt m'ont rapidement porté vers des contrées insoupçonnées.
+               Intéressé par la cartographie, le traitement d'images, l'informatique et les statistiques, j'ai ainsi réalisé le Master Observation de la Terre et Géomatique.</p>
+          </div>
+          <div class="profil-column col-right">
+            <p>A partir de la troisième année de licence, j'ai commencé à travailler sur différents projets.
+               Plusieurs groupes de recherche, organismes et laboratoires m'ont ainsi acueilli, dont le Laboratoire Image Ville Environnement (LIVE), l'Institut de Physique du Globe de Strasbourg (IPGS),
+               Alsace Aval Sentinel (A²S), le CES Artificialisation-Urbanisation, ainsi que la Zone Atelier Environnementale Urbaine (ZAEU).
+            </p>
+          </div>
+        </div>
+        <p>Une version numérique de mon <i>curriculum vitae</i> est disponible au lien suivant : <a href="_2019_PoterekQuentin_CV.pdf" target="_blank" class="ext-link"> Curriculum Vitae</a>.</p>
+        <p>Vous pouvez également me contacter à l'adresse suivante : <a href="mailto:quentin.poterek@outlook.fr" class="ext-link"> quentin.poterek@outlook.fr</a>.</p>
+
+        <!-- Portfolio -->
+        <h2 id="portfolio">Portfolio</h2>
+        <p>Cette section présente une sélection des travaux que j'ai pu réaliser par intérêt personnel, dans un cadre universitaire ou encore professionnel.</p>
+
+        <!-- Portfolio professionnel -->
+        <h3 id="professionnel">Professionnel</h3>
+        <p>Cette sous-section présente quelques travaux réalisés dans le cadre de contrats, missions, etc. Beaucoup d'entre eux s'articulent autour de programmes et divers scripts, qui ne sont pas publiés pour des raisons évidentes de confidentialité.</p>
+
+        <div class="portfolio-row">
+          <div class="portfolio-column">
+            <div class="bg-img" id="img-pro-11"></div>
+            <div class="portfolio-nom"><p>&lsaquo;A VENIR&rsaquo; 2019 | Ptolémée<br /><span class="desc">Analyse de la 'Géographie' de Ptolémée</span></p></div>
+            <div class="doc-type web">A VENIR</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/pro-21/REPORT_REF_W-DSMOPT_W.html');" style="cursor: pointer;">
+            <div class="bg-img" id="img-pro-21"></div>
+            <div class="portfolio-nom"><p>2017 | Restitution photogrammétrique<br /><span class="desc">Comparaison automatisée des chaînes de production S2P et DSM-OPT</span></p></div>
+            <div class="doc-type web">WEB</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/pro-31/Sentinel/index.html');" style="cursor: pointer;">
+            <div class="bg-img" id="img-pro-31"></div>
+            <div class="portfolio-nom"><p>2016 | Chaîne URBA-OPT (beta)<br /><span class="desc">Résultats de la chaîne URBA-OPT sur une scène Sentinel-2A datant de 2016</span></p></div>
+            <div class="doc-type web">WEB</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/pro-41/Spot/index.html');" style="cursor: pointer;">
+            <div class="bg-img" id="img-pro-41"></div>
+            <div class="portfolio-nom"><p>2016 | Chaîne URBA-OPT (alpha)<br /><span class="desc">Résultats de la chaîne URBA-OPT sur une série temporelle d'images SPOT de 1992 à 2011</span></p></div>
+            <div class="doc-type web">WEB</div>
+          </div>
+        </div>
+
+        <!-- Portfolio universitaire -->
+        <h3 id="universite">Universitaire</h3>
+        <p>Cette sous-section présente quelques travaux réalisés dans le cadre de mon parcours universitaire.</p>
+
+        <div class="portfolio-row">
+          <div class="portfolio-column" onclick="window.open('./articles/uni-11/_2018_Poterek_StageMemoire.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-11"></div>
+            <div class="portfolio-nom"><p>2018 | Stage de fin d'études (Mémoire)<br /><span class="desc">Colorisation automatique de produits panchromatiques</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-21/_2018_M2OTG_QuentinPoterek_Soutenance.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-21"></div>
+            <div class="portfolio-nom"><p>2018 | Stage de fin d'études (Soutenance)<br /><span class="desc">Colorisation automatique de produits panchromatiques</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-31/_2018_MedinaPoterekSindt_MemoireGEOLab.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-31"></div>
+            <div class="portfolio-nom"><p>2018 | Atelier GEO-Lab (Mémoire)<br /><span class="desc">SIG Géohistorique et dynamiques urbaines - L'Eurométropole de 1956 à 2013</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-41/_2018_MedinaPoterekSindt_SoutenanceGEOLab.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-41"></div>
+            <div class="portfolio-nom"><p>2018 | Atelier GEO-Lab (Soutenance)<br /><span class="desc">SIG Géohistorique et dynamiques urbaines - L'Eurométropole de 1956 à 2013</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-51/M1OTG_PoterekQuentin_MemoireTER.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-51"></div>
+            <div class="portfolio-nom"><p>2017 | Travail d'étude et de recherche (Mémoire)<br /><span class="desc">Comparaison des produits 'tache artificialisée'</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-61/M1OTG_QuentinPoterek_SoutenanceTER.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-61"></div>
+            <div class="portfolio-nom"><p>2017 | Travail d'étude et de recherche (Soutenance)<br /><span class="desc">Comparaison des produits 'tache artificialisée'</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-71/_2016_Houston/index.html');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-71"></div>
+            <div class="portfolio-nom"><p>2016 | Analyse thématique (UE Anglais)<br /><span class="desc">Evolution de l'artificialisation et de la distribution des catégories sociales dans Houston, TX</span></p></div>
+            <div class="doc-type web">WEB</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-81/ItinerairesVelo-Parcs_Presentation.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-81"></div>
+            <div class="portfolio-nom"><p>2016 | Méthodes d'analyse spatiale<br /><span class="desc">Accessibilité à vélo des parcs strasbourgeois - Carte de présentation générale</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-91/ItinerairesVelo-Parcs_PPV.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-91"></div>
+            <div class="portfolio-nom"><p>2016 | Méthodes d'analyse spatiale<br /><span class="desc">Accessibilité à vélo des parcs strasbourgeois - Itinéraires vers les trois plus proches voisins</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-101/M1OTG_HumberPoterek_TNU.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-101"></div>
+            <div class="portfolio-nom"><p>2016 | Méthodes d'analyse spatiale<br /><span class="desc">Diagnostic du Tissu Naturel Urbain de Strasbourg</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-111/M1OTG_Poterek_SpatialisationGeostats.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-111"></div>
+            <div class="portfolio-nom"><p>2016 | Spatialisation et géostatistiques<br /><span class="desc">Analyse de semis de points</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-121/_2016_IntroGeo_ParcEnergetique.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-121"></div>
+            <div class="portfolio-nom"><p>2016 | Introduction à la géographie environnementale<br /><span class="desc">Le parc énergétique dans les pays de l'UE28 en 2014</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-131/_2016_TraitementSignalColmarNDVI.jpg');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-131"></div>
+            <div class="portfolio-nom"><p>2016 | Télédétection et bases en traitement du signal<br /><span class="desc">Cartographie et seuillage du NDVI dans la région de Colmar</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-141/L3_StageHydro_ProfilsLitho.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-141"></div>
+            <div class="portfolio-nom"><p>2016 | Stage en hydrologie et climatologie<br /><span class="desc">L'espérance de vie dans les pays du monde arabe en 1990'</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-151/_2016_Colloque_Hildesheim.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-151"></div>
+            <div class="portfolio-nom"><p>2016 | Colloque 'La sémiologie dans tous les sens'<br /><span class="desc">La sémiologie dans l'expression du temps - De l'Episcopatus Hildesiensis à Hildesheim</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-161/ocs.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-161"></div>
+            <div class="portfolio-nom"><p>2016 | Télédétection et occupation du sol<br /><span class="desc">Classification supervisée de l'occupation du sol dans l'aire urbaine strasbourgeoise en 1999</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-171/MutationsTerritoriales.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-171"></div>
+            <div class="portfolio-nom"><p>2016 | Mutations des territoires<br /><span class="desc">Le cas de la ruée vers l'or en Californie</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-181/oursins.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-181"></div>
+            <div class="portfolio-nom"><p>2015 | Analyse de l'accessibilité potentielle à des services<br /><span class="desc">Les liaisons intercommunales entre les communes du Bas-Rhin (erreurs dans les données brutes, visibles sur la cartographie)</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-191/AT15.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-191"></div>
+            <div class="portfolio-nom"><p>2015 | Analyse de l'accessibilité de réseau<br /><span class="desc">L'accessibilité ferroviaire de trois grandes villes françaises en 2015</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-201/bcn_luttes.jpg');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-201"></div>
+            <div class="portfolio-nom"><p>2015 | Métropolisation des territoires<br /><span class="desc">Barcelone et son processus de gentrification</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-211/bcn_artificialisation.jpg');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-211"></div>
+            <div class="portfolio-nom"><p>2015 | Métropolisation des territoires<br /><span class="desc">Barcelone et son processus d'artificialisation</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-221/risquesMontagnards.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-221"></div>
+            <div class="portfolio-nom"><p>2015 | Systèmes montagnards<br /><span class="desc">Mise en situation - Le risque avalanche en territoire skiable</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-231/Carto_RegressionLinMul.png');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-231"></div>
+            <div class="portfolio-nom"><p>2015 | Cartographie et statistiques multivariées<br /><span class="desc">L'espérance de vie dans les pays du monde arabe en 1990</span></p></div>
+            <div class="doc-type img">IMG</div>
+          </div>
+          <div class="portfolio-column" onclick="window.open('./articles/uni-241/RegLin.pdf');" style="cursor: pointer;">
+            <div class="bg-img" id="img-uni-241"></div>
+            <div class="portfolio-nom"><p>2014 | Cartographie et statistiques bivariées<br /><span class="desc">Densités d’accidents dans les quartiers et communes de l’agglomération lilloise</span></p></div>
+            <div class="doc-type pdf">PDF</div>
+          </div>
+        </div>
+
+        <!-- Portfolio personnel -->
+        <h3 id="personnel">Personnel</h3>
+        <p>A venir...</p>
+
+        <!-- Centres d'intérêt -->
+        <h2 id="interets">Centres d'intérêt</h2>
+        <p>L'intérêt que je porte aujourd'hui à la géomatique trouve son origine dans les rapports que j'ai pu avoir par le passé avec d'autres disciplines.</p>
+        <p>La première correspond au dessin, que j'ai longtemps pratiqué jusqu'à mon entrée à l'université. Avec l'essor du digital, cette sensibilité m'a poussé à m'intéresser à l'infrographie et à la modélisation 3D particulièrement. N'étant pas un spécialiste de ces techniques, je m'y adonne tout de même fréquemment. Cet intérêt se traduit dans mes travaux graphiques, que j'essaie perpétuellement de soigner.</p>
+        <p>La seconde discipline correspond à l'informatique, et aux technologies de façon plus générale. J'apprécie ainsi particulièrement la programmation et les langages du web. Cet intérêt m'a récemment poussé à travailler sur des projets de robotique, pour le moment modestes (en espérant pouvoir aller plus loin), articulés autour d'une Raspberry PI, d'un Arduino et de divers capteurs utilisés pour collecter de l'information mobilisable en géographie et géomatique.</p>
+        <p>Dernièrement, j'ai également commencé à m'intéresser à l'histoire de Strasbourg, en vue de créer éventuellement un SIG géohistorique compilant diverses informations sur la ville et les personnalités historiques ayant foulé ses pavés.</p>
+      </div>
+    </div>
+
+    <div class="col-pad pad3"></div>
+
+  </div>
+
+
 </body>
+
 </html>
