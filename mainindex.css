@@ -325,6 +325,7 @@ h3:after{
   width: 100%;
   height: 100%;
   transition: all 0.5s;
+  overflow: hidden;
 }
 
 .bg-img:hover {
@@ -334,7 +335,6 @@ h3:after{
 }
 
 #img-pro-11 {
-  background-position: center;
   -webkit-filter: grayscale(100%) blur(2px);
   filter: grayscale(100%) blur(2px);
 }
@@ -345,134 +345,16 @@ h3:after{
   transition: all 0.5s;
 }
 
-#img-pro-21 {
-  background-position: center;
+.bg-img img {
+  width:100%;
+  height:100%;
+  object-fit: cover;
 }
 
-#img-pro-31 {
-  background-position: center;
-  background-size: cover;
+#img-uni-41 img {
+  object-fit: none;
 }
 
-#img-pro-41 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-11 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-21 {
-  background-position: bottom center;
-  background-size: cover;
-}
-
-#img-uni-31 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-41 {
-  background-position: center 90%;
-}
-
-#img-uni-51 {
-  background-position: center;
-}
-
-#img-uni-61 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-71 {
-  background-position: center right;
-  background-size: cover;
-}
-
-#img-uni-81 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-91 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-101 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-111 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-121 {
-  background-position: right center;
-  background-size: cover;
-}
-
-#img-uni-131 {
-  background-position: left center;
-  background-size: cover;
-}
-
-#img-uni-141 {
-  background-position: left center;
-  background-size: cover;
-}
-
-#img-uni-151 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-161 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-171 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-181 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-191 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-201 {
-  background-position: center;
-  background-size: cover;
-}
-
-#img-uni-211 {
-  background: white url() center;
-  background-size: cover;
-}
-
-#img-uni-221 {
-  background: white url() center;
-  background-size: cover;
-}
-
-#img-uni-231 {
-  background: white url() center;
-  background-size: cover;
-}
-
-#img-uni-241 {
-  background: white url() center;
-  background-size: cover;
+#img-uni-51 img {
+  object-fit: none;
 }
