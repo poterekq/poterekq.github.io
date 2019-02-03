@@ -334,7 +334,7 @@ h3:after{
 }
 
 #img-pro-11 {
-  background: white url(./articles/pro-11/Thumbnail_PtolemyGeography.jpg) center;
+  background-position: center;
   -webkit-filter: grayscale(100%) blur(2px);
   filter: grayscale(100%) blur(2px);
 }
@@ -346,133 +346,133 @@ h3:after{
 }
 
 #img-pro-21 {
-  background: white url(./articles/pro-21/Thumbnail_Photogram.jpg) center;
+  background-position: center;
 }
 
 #img-pro-31 {
-  background: white url(./articles/pro-31/Thumbnail_Sentinel.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-pro-41 {
-  background: white url(./articles/pro-41/Thumbnail_Spot.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-11 {
-  background: white url(./articles/uni-11/Thumbnail_StageColorisation_Memoire.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-21 {
-  background: white url(./articles/uni-21/Thumbnail_StageSoutenance.jpg) bottom center;
+  background-position: bottom center;
   background-size: cover;
 }
 
 #img-uni-31 {
-  background: white url(./articles/uni-31/Thumbnail_GEOLabMemoire.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-41 {
-  background: white url(./articles/uni-41/Thumbnail_GEOLabSoutenance.jpg) center 90%;
+  background-position: center 90%;
 }
 
 #img-uni-51 {
-  background: white url(./articles/uni-51/Thumbnail_MemoireTER.jpg) center;
+  background-position: center;
 }
 
 #img-uni-61 {
-  background: white url(./articles/uni-61/Thumbnail_SoutenanceTER.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-71 {
-  background: white url(./articles/uni-71/Thumbnail_Houston.jpg) center right;
+  background-position: center right;
   background-size: cover;
 }
 
 #img-uni-81 {
-  background: white url(./articles/uni-81/Thumbnail_ItinerairesVelo-Parcs_Presentation.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-91 {
-  background: white url(./articles/uni-91/Thumbnail_ItinerairesVelo-Parcs_PPV.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-101 {
-  background: white url(./articles/uni-101/Thumbnail_TNU.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-111 {
-  background: white url(./articles/uni-111/Thumbnail_SemisPoints.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-121 {
-  background: white url(./articles/uni-121/Thumbnail_IntroGeo_ParcEnergetique.jpg) right center;
+  background-position: right center;
   background-size: cover;
 }
 
 #img-uni-131 {
-  background: white url(./articles/uni-131/Thumbnail_TraitementSignalColmarNDVI.jpg) left center;
+  background-position: left center;
   background-size: cover;
 }
 
 #img-uni-141 {
-  background: white url(./articles/uni-141/Thumbnail_L3_StageHydro_ProfilsLitho.jpg) left center;
+  background-position: left center;
   background-size: cover;
 }
 
 #img-uni-151 {
-  background: white url(./articles/uni-151/Thumbnail_Hildesheim.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-161 {
-  background: white url(./articles/uni-161/Thumbnail_OCS.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-171 {
-  background: white url(./articles/uni-171/Thumbnail_MutationsTerritoriales.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-181 {
-  background: white url(./articles/uni-181/Thumbnail_oursins.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-191 {
-  background: white url(./articles/uni-191/Thumbnail_AT15.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-201 {
-  background: white url(./articles/uni-201/Thumbnail_bcn_luttes.jpg) center;
+  background-position: center;
   background-size: cover;
 }
 
 #img-uni-211 {
-  background: white url(./articles/uni-211/Thumbnail_bcn_artificialisation.jpg) center;
+  background: white url() center;
   background-size: cover;
 }
 
 #img-uni-221 {
-  background: white url(./articles/uni-221/Thumbnail_risquesMontagnards.jpg) center;
+  background: white url() center;
   background-size: cover;
 }
 
 #img-uni-231 {
-  background: white url(./articles/uni-231/Thumbnail_Carto_RegressionLinMul.jpg) center;
+  background: white url() center;
   background-size: cover;
 }
 
 #img-uni-241 {
-  background: white url(./articles/uni-241/Thumbnail_RegLin.jpg) center;
+  background: white url() center;
   background-size: cover;
 }
