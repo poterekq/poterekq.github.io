@@ -1,0 +1,87 @@
+@import "furtive-print";
+@import "furtive-code";
+@import "furtive-links";
+@import "furtive-typescale";
+@import "furtive-responsive-utils";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,700);
+@import url(http://fonts.googleapis.com/css?family=Cabin:300,300italic);
+
+html {
+  font-size: 18px;
+  max-width: 100%;
+}
+
+body {
+  color: #444;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 48rem;
+  line-height: 1.45;
+  padding: .25rem;
+  text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  border-bottom: 2px solid #fafafa;
+  margin-bottom: 1.15rem;
+  padding-bottom: .5rem;
+  text-align: center;
+}
+
+blockquote {
+  border-left: 8px solid #fafafa;
+  padding: 1rem;
+}
+
+pre,
+code {
+  background-color: #fafafa;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table th {
+  font-weight: 600;
+}
+
+table td,
+table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+iframe {
+  max-width: 100%;
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
