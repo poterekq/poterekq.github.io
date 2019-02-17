@@ -10,6 +10,7 @@
 <body>
   <article class="markdown-body">
     <h1 id="Projet-photogrammetrie" data-line="0">02/2019 - Projet photogrammétrie</h1>
+    <p>A noter que l'article est en cours de rédaction !</p>
     <p data-line="4">Après avoir récemment fait l’acquisition d’une Raspberry Pi et d’une caméra Pi NoIR v2, j’ai décidé de m’essayer à la photogrammétrie en vue de produire des NDVI terrestres 3D.</p>
     <h2 id="Quelques-tests-de-restitution-photogrammetrique" data-line="6">Quelques tests de restitution photogrammétrique</h2>
     <p data-line="8">Il est possible, à partir de clichés pris grâce à un simple appareil photographique, d’obtenir une représentation en trois dimensions d’un objet, processus qui s’appelle la restitution photogrammétrique. Pour cela, les
@@ -74,16 +75,29 @@
     <iframe align="center" src="" id="api-frame-recent" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
     <h2 id="Restitution-photogrammetrique-de-NDVI-terrestres" data-line="28">Restitution photogrammétrique de NDVI terrestres</h2>
-    <p data-line="30">A venir dans un prochain article…</p>
+    <p data-line="30">Un nuage de points a pu être généré suite à l'acquisition d'une cinquantaine de clichés le 12/02/2017. L'appareil utilisé est une caméra PiNoiR v2. Peu de spéficiations sont disponibles pour celle-ci,
+    mais il semblerait que ses canaux soient les suivants : (PIR, R, V). L'appareil, destiné notamment à être utilisé par les botanistes, permet de récupérer une information sur la quantité de rayonnement proche-infrarouge
+    réfléchie par la végétation. Il semblait donc tout naturel d'essayer de générer tout d'abord un modèle 3D à partir des clichés acquis, puis de calculer un NDVI sur celui-ci.</p>
+    <p>Les images capturées ont toutes été utilisées comme entrées dans la chaîne de traitements photogrammétrique du logiciel COLMAP. A noter que la cinquantaine de clichés n'était ici pas nécessaire ; un nombre inférieur
+    aurait largement suffit compte-tenu des dimensions de la scène. Un résultat de la restitution est visible ci-dessous.</p>
+
+    <iframe align="center" src="" id="api-frame-pir" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    <p>Ce nuage a ensuite été utilisé pour calculer un NDVI tridimensionnel. En effet, à chaque point sont associés trois qui renseignent sur la réflectance dans le PIR, le R et le V.
+    Il est possible, à l'aide de CloudCompare, de récupérer cette information radiométrique puis de calculer un indice de végétation. La formule utilisée est la suivante : NDVI = (PIR-R)/(PIR+R).
+    Les valeurs prises par cet indice normalisé sont comprises entre -1 (absence d'activité chlorophyllienne) et +1 (activité chlorophyllienne importante). Il est important de noter que les clichés utilisés pour créer le nuage de
+    points ont été pris en hiver (12/02/2019), en milieu d'après-midi et avec une nébulosité totale. L'activité chlorophyllienne est donc absente (caducifoliés) ou faible (pelouse, végétation à feuilles non caduques), comme en
+    témoigne le modèle ci-dessous. Le code couleur est le suivant : [ROUGE] NDVI < 0 ; [BEIGE] NDVI ≈ 0 ; [VERT] NDVI > 0, avec un intervalle de valeurs d'environ [-0.25 ; +0.25].</p>
+
+    <iframe align="center" src="" id="api-frame-ndvi" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <br>
   </article>
 
   <!-- Initialize the viewer -->
   <script type="text/javascript">
   var iframe = document.getElementById( 'api-frame-histo' );
   var uid = 'f32b4472fa6642599511670986903b07';
-
   var client = new Sketchfab( iframe );
-
   client.init( uid, {
       success: function onSuccess( api ){
           api.start();
@@ -102,9 +116,45 @@
 
   var iframeRecent = document.getElementById( 'api-frame-recent' );
   var uidRecent = '5cb9eadb78274d488539eb2a383b2ba5';
-
   var clientRecent = new Sketchfab( iframeRecent );
+  clientRecent.init( uidRecent, {
+      success: function onSuccess( api ){
+          api.start();
+          api.addEventListener( 'viewerready', function() {
 
+              // API is ready to use
+              // Insert your code here
+              console.log( 'Viewer is ready' );
+
+          } );
+      },
+      error: function onError() {
+          console.log( 'Viewer error' );
+      }
+  } );
+
+  var iframeRecent = document.getElementById( 'api-frame-pir' );
+  var uidRecent = '27be8033405b4353aa17ca76d814935a';
+  var clientRecent = new Sketchfab( iframeRecent );
+  clientRecent.init( uidRecent, {
+      success: function onSuccess( api ){
+          api.start();
+          api.addEventListener( 'viewerready', function() {
+
+              // API is ready to use
+              // Insert your code here
+              console.log( 'Viewer is ready' );
+
+          } );
+      },
+      error: function onError() {
+          console.log( 'Viewer error' );
+      }
+  } );
+
+  var iframeRecent = document.getElementById( 'api-frame-ndvi' );
+  var uidRecent = '3aeb6d20b313429ab198d16a98b7fed4';
+  var clientRecent = new Sketchfab( iframeRecent );
   clientRecent.init( uidRecent, {
       success: function onSuccess( api ){
           api.start();

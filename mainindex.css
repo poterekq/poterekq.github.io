@@ -334,12 +334,12 @@ h3:after{
   transition: all 0.5s;
 }
 
-#img-pro-11 {
+#img-pro-11, #img-pro-21, #img-per-21 {
   -webkit-filter: grayscale(100%) blur(2px);
   filter: grayscale(100%) blur(2px);
 }
 
-#img-pro-11:hover {
+#img-pro-11:hover, #img-pro-21:hover, #img-per-21:hover {
   -webkit-filter: grayscale(100%) blur(0px);
   filter: grayscale(100%) blur(0px);
   transition: all 0.5s;
@@ -351,10 +351,6 @@ h3:after{
   object-fit: cover;
 }
 
-#img-uni-41 img {
-  object-fit: none;
-}
-
-#img-uni-51 img {
+#img-uni-41 img, #img-uni-51 img {
   object-fit: none;
 }
