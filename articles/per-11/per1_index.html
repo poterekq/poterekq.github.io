@@ -1,176 +1,860 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width = device-width, initial-scale = 1, maximum-scale = 1">
-  <link rel="stylesheet" href="../../md_articles.css">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.4.2.js"></script>
+  <title>Projet photogrammétrie</title>
+  <style>
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    span.underline {
+      text-decoration: underline;
+    }
+
+    div.column {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+    }
+  </style>
+  <style type="text/css">
+    @font-face {
+      font-family: octicons-link;
+      src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+    }
+
+    body {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      text-align: justify;
+      color: #333;
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 16px;
+      line-height: 1.6;
+      word-wrap: break-word;
+      width: 728px;
+      max-width: 99%;
+      box-sizing: border-box;
+      padding: 30px 30px 8rem 30px;
+      margin: 0 auto;
+    }
+
+    body a {
+      background-color: transparent;
+    }
+
+    body a:active,
+    body a:hover {
+      outline: 0;
+    }
+
+    body strong {
+      font-weight: bold;
+    }
+
+    body h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    body img {
+      border: 0;
+    }
+
+    body hr {
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    body pre {
+      overflow: auto;
+    }
+
+    body code,
+    body kbd,
+    body pre {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    body input {
+      color: inherit;
+      font: inherit;
+      margin: 0;
+    }
+
+    body html input[disabled] {
+      cursor: default;
+    }
+
+    body input {
+      line-height: normal;
+    }
+
+    body input[type="checkbox"] {
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    body table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    body td,
+    body th {
+      padding: 0;
+    }
+
+    body * {
+      box-sizing: border-box;
+    }
+
+    body input {
+      font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    body a {
+      color: #4078c0;
+      text-decoration: none;
+    }
+
+    body a:hover,
+    body a:active {
+      text-decoration: underline;
+    }
+
+    body hr {
+      height: 0;
+      margin: 15px 0;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    body hr:before {
+      display: table;
+      content: "";
+    }
+
+    body hr:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    body h1,
+    body h2,
+    body h3,
+    body h4,
+    body h5,
+    body h6 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    body h1 {
+      font-size: 30px;
+    }
+
+    body h2 {
+      font-size: 21px;
+    }
+
+    body h3 {
+      font-size: 16px;
+    }
+
+    body h4 {
+      font-size: 14px;
+    }
+
+    body h5 {
+      font-size: 12px;
+    }
+
+    body h6 {
+      font-size: 11px;
+    }
+
+    body blockquote {
+      margin: 0;
+    }
+
+    body ul,
+    body ol {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    body ol ol,
+    body ul ol {
+      list-style-type: lower-roman;
+    }
+
+    body ul ul ol,
+    body ul ol ol,
+    body ol ul ol,
+    body ol ol ol {
+      list-style-type: lower-alpha;
+    }
+
+    body dd {
+      margin-left: 0;
+    }
+
+    body code {
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 12px;
+    }
+
+    body pre {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+
+    body .select::-ms-expand {
+      opacity: 0;
+    }
+
+    body .octicon {
+      font: normal normal normal 16px/1 octicons-link;
+      display: inline-block;
+      text-decoration: none;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    body .octicon-link:before {
+      content: '\f05c';
+    }
+
+    body:before {
+      display: table;
+      content: "";
+    }
+
+    body:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    body>*:first-child {
+      margin-top: 0 !important;
+    }
+
+    body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    body a:not([href]) {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    body .anchor {
+      display: inline-block;
+      padding-right: 2px;
+      margin-left: -18px;
+    }
+
+    body .anchor:focus {
+      outline: none;
+    }
+
+    body h1,
+    body h2,
+    body h3,
+    body h4,
+    body h5,
+    body h6 {
+      margin-top: 1em;
+      margin-bottom: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    body h1 .octicon-link,
+    body h2 .octicon-link,
+    body h3 .octicon-link,
+    body h4 .octicon-link,
+    body h5 .octicon-link,
+    body h6 .octicon-link {
+      color: #000;
+      vertical-align: middle;
+      visibility: hidden;
+    }
+
+    body h1:hover .anchor,
+    body h2:hover .anchor,
+    body h3:hover .anchor,
+    body h4:hover .anchor,
+    body h5:hover .anchor,
+    body h6:hover .anchor {
+      text-decoration: none;
+    }
+
+    body h1:hover .anchor .octicon-link,
+    body h2:hover .anchor .octicon-link,
+    body h3:hover .anchor .octicon-link,
+    body h4:hover .anchor .octicon-link,
+    body h5:hover .anchor .octicon-link,
+    body h6:hover .anchor .octicon-link {
+      visibility: visible;
+    }
+
+    body h1 {
+      padding-bottom: 0.3em;
+      font-size: 1.75em;
+      line-height: 1.2;
+    }
+
+    body h1 .anchor {
+      line-height: 1;
+    }
+
+    body h2 {
+      padding-bottom: 0.3em;
+      font-size: 1.5em;
+      line-height: 1.225;
+    }
+
+    body h2 .anchor {
+      line-height: 1;
+    }
+
+    body h3 {
+      font-size: 1.25em;
+      line-height: 1.43;
+    }
+
+    body h3 .anchor {
+      line-height: 1.2;
+    }
+
+    body h4 {
+      font-size: 1em;
+    }
+
+    body h4 .anchor {
+      line-height: 1.2;
+    }
+
+    body h5 {
+      font-size: 1em;
+    }
+
+    body h5 .anchor {
+      line-height: 1.1;
+    }
+
+    body h6 {
+      font-size: 1em;
+      color: #777;
+    }
+
+    body h6 .anchor {
+      line-height: 1.1;
+    }
+
+    body p,
+    body blockquote,
+    body ul,
+    body ol,
+    body dl,
+    body table,
+    body pre {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    body hr {
+      height: 4px;
+      padding: 0;
+      margin: 16px 0;
+      background-color: #e7e7e7;
+      border: 0 none;
+    }
+
+    body ul,
+    body ol {
+      padding-left: 2em;
+    }
+
+    body ul ul,
+    body ul ol,
+    body ol ol,
+    body ol ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    body li>p {
+      margin-top: 16px;
+    }
+
+    body dl {
+      padding: 0;
+    }
+
+    body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    body blockquote {
+      padding: 0 15px;
+      color: #777;
+      border-left: 4px solid #ddd;
+    }
+
+    body blockquote>:first-child {
+      margin-top: 0;
+    }
+
+    body blockquote>:last-child {
+      margin-bottom: 0;
+    }
+
+    body table {
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all;
+      text-align: center;
+      align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body table th {
+      font-weight: bold;
+    }
+
+    body table th,
+    body table td {
+      padding: 6px 13px;
+      border: 1px solid #ddd;
+    }
+
+    body table tr {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    body table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    body img {
+      max-width: 100%;
+      box-sizing: content-box;
+      background-color: #fff;
+    }
+
+    body code {
+      padding: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
+      font-size: 85%;
+      background-color: rgba(0, 0, 0, 0.04);
+      border-radius: 3px;
+    }
+
+    body code:before,
+    body code:after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+
+    body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+
+    body .highlight {
+      margin-bottom: 16px;
+    }
+
+    body .highlight pre,
+    body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+    }
+
+    body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+
+    body pre {
+      word-wrap: normal;
+    }
+
+    body pre code {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+    }
+
+    body pre code:before,
+    body pre code:after {
+      content: normal;
+    }
+
+    body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font-size: 11px;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+
+    body .pl-c {
+      color: #969896;
+    }
+
+    body .pl-c1,
+    body .pl-s .pl-v {
+      color: #0086b3;
+    }
+
+    body .pl-e,
+    body .pl-en {
+      color: #795da3;
+    }
+
+    body .pl-s .pl-s1,
+    body .pl-smi {
+      color: #333;
+    }
+
+    body .pl-ent {
+      color: #63a35c;
+    }
+
+    body .pl-k {
+      color: #a71d5d;
+    }
+
+    body .pl-pds,
+    body .pl-s,
+    body .pl-s .pl-pse .pl-s1,
+    body .pl-sr,
+    body .pl-sr .pl-cce,
+    body .pl-sr .pl-sra,
+    body .pl-sr .pl-sre {
+      color: #183691;
+    }
+
+    body .pl-v {
+      color: #ed6a43;
+    }
+
+    body .pl-id {
+      color: #b52a1d;
+    }
+
+    body .pl-ii {
+      background-color: #b52a1d;
+      color: #f8f8f8;
+    }
+
+    body .pl-sr .pl-cce {
+      color: #63a35c;
+      font-weight: bold;
+    }
+
+    body .pl-ml {
+      color: #693a17;
+    }
+
+    body .pl-mh,
+    body .pl-mh .pl-en,
+    body .pl-ms {
+      color: #1d3e81;
+      font-weight: bold;
+    }
+
+    body .pl-mq {
+      color: #008080;
+    }
+
+    body .pl-mi {
+      color: #333;
+      font-style: italic;
+    }
+
+    body .pl-mb {
+      color: #333;
+      font-weight: bold;
+    }
+
+    body .pl-md {
+      background-color: #ffecec;
+      color: #bd2c00;
+    }
+
+    body .pl-mi1 {
+      background-color: #eaffea;
+      color: #55a532;
+    }
+
+    body .pl-mdr {
+      color: #795da3;
+      font-weight: bold;
+    }
+
+    body .pl-mo {
+      color: #1d3e81;
+    }
+
+    body kbd {
+      display: inline-block;
+      padding: 3px 5px;
+      font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      line-height: 10px;
+      color: #555;
+      vertical-align: middle;
+      background-color: #fcfcfc;
+      border: solid 1px #ccc;
+      border-bottom-color: #bbb;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #bbb;
+    }
+
+    body .task-list-item {
+      list-style-type: none;
+    }
+
+    body .task-list-item+.task-list-item {
+      margin-top: 3px;
+    }
+
+    body .task-list-item input {
+      margin: 0 0.35em 0.25em -1.6em;
+      vertical-align: middle;
+    }
+
+    body :checked+.radio-label {
+      z-index: 1;
+      position: relative;
+      border-color: #4078c0;
+    }
+
+    iframe {
+      max-width: 100%;
+      width: 600px;
+      height: 400px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #ndvi-ramp {
+      display: inline-block;
+      width: 200px;
+      height: 1.5em;
+      line-height: 1.5em;
+      padding: 0 5px;
+      background: linear-gradient(to right, #ff007f, #ffffff, #00aa00);
+      border-radius: 1.5em;
+    }
+
+    #ndvi-ramp::after {
+      content: "+0.25";
+      padding-left: 105px;
+    }
+
+    #ndvi-ramp::before {
+      content: "-0.25";
+      padding-left: 5px;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
-  <article class="markdown-body">
-    <h1 id="Projet-photogrammetrie" data-line="0">02/2019 - Projet photogrammétrie</h1>
-    <p>A noter que l'article est en cours de rédaction !</p>
-    <p data-line="4">Après avoir récemment fait l’acquisition d’une Raspberry Pi et d’une caméra Pi NoIR v2, j’ai décidé de m’essayer à la photogrammétrie en vue de produire des NDVI terrestres 3D.</p>
-    <h2 id="Quelques-tests-de-restitution-photogrammetrique" data-line="6">Quelques tests de restitution photogrammétrique</h2>
-    <p data-line="8">Il est possible, à partir de clichés pris grâce à un simple appareil photographique, d’obtenir une représentation en trois dimensions d’un objet, processus qui s’appelle la restitution photogrammétrique. Pour cela, les
-      photographies acquises doivent en partie se superposer. Pour les applications en géomatique, des recouvrements latéraux et longitudinaux d’environ 20% et 60% respectivement sont généralement préférés.</p>
-    <p data-line="10">L’Institut Géographique National (IGN) met à disposition des utilisateurs-trices un vaste catalogue de photographies aériennes, acquises dès la première moitié du vingtième siècle sur l’ensemble de la France. Les clichés sont
-      accessibles à l’adresse suivante : <a href="https://remonterletemps.ign.fr/">Remonter le temps</a>.</p>
-    <p data-line="12">J’ai ainsi réalisé quelques tests de restitution sur des produits IGN récents en couleurs naturelles, et historiques panchromatiques. Quelques unes de leurs spécifications sont décrites ci-dessous.</p>
-    <table data-line="14" align="center">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Historique</th>
-          <th>Récent</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Année</td>
-          <td>1974</td>
-          <td>2007</td>
-        </tr>
-        <tr>
-          <td>Zone</td>
-          <td>Strasbourg</td>
-          <td>Wangen</td>
-        </tr>
-        <tr>
-          <td>Bandes</td>
-          <td>PAN</td>
-          <td>R, V, B</td>
-        </tr>
-        <tr>
-          <td>Type de cliché</td>
-          <td>Analogique</td>
-          <td>Numérique</td>
-        </tr>
-        <tr>
-          <td>Résolution</td>
-          <td>-</td>
-          <td>~0,7m</td>
-        </tr>
-        <tr>
-          <td>Echelle</td>
-          <td>~1/2000</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Nombre de clichés</td>
-          <td>4</td>
-          <td>12</td>
-        </tr>
-      </tbody>
-      <tbody></tbody>
-    </table>
-    <p data-line="24">Le processus de restitution photogrammétrique a été réalisé sous 3DF Zephyr (version gratuite) pour chaque test. Seul un nuage de points a été généré pour le produit historique, un maillage n’étant ici pas pertinent du fait du
-      nombre de clichés utilisés et des angles de prise de vue. Une étape de post-traitement a été nécessaire sur CloudCompare pour nettoyer certaines parties du nuage. Un maillage et la texture associée ont quant à eux été générés pour les
-      photographies de 2007, avec un nettoyage rapide sur Blender.</p>
+  <h1 id="restitution-photogrammétrique">Restitution photogrammétrique</h1>
+  <p>Quentin Poterek</p>
+  <p>quentin.poterek@outlook.fr</p>
+  <p>poterekq.github.io</p>
+  <p><em>02/2019</em></p>
+  <hr />
+  <p>Ayant récemment fait l’acquisition d’une Raspberry Pi et d’une caméra Pi NoIR v2, j’ai décidé de m’essayer à la photogrammétrie en vue de produire des NDVI terrestres tridimensionnels.</p>
+  <h2 id="quelques-tests-préliminaires-de-restitution-photogrammétrique">Quelques tests préliminaires de restitution photogrammétrique</h2>
+  <p>A partir de clichés pris grâce à un simple appareil photographique, il est possible d’obtenir une représentation en trois dimensions d’un objet ou d’un espace. Ce processus, qui s’appelle <strong>restitution photogrammétrique</strong>, requiert
+    de disposer d’au moins deux vues avec recouvrement, et capturées selon des positions légèrement différentes afin de disposer d’une information sur la profondeur de la scène. Pour les applications en géomatique sur produits aériens, des
+    recouvrements latéraux et longitudinaux d’environ 20% et 60% respectivement sont généralement préférés. Dans le cas d’acquisitions terrestres, il est conseillé de faire en sorte que chaque portion d’une scène apparaisse dans au moins trois
+    clichés, en maintenant un taux de recouvrement supérieur à 80%.</p>
+  <p>Les premiers tests ici réalisés s’articulent autour d’un cas de figure classique en géomatique : le traitement de photographies aériennes. Celles qui ont été ici utilisées sont mises à disposition des utilisateurs-trices par L’Institut
+    Géographique National (IGN). Stockés dans un vaste, ces clichés ont été acquis dès la première moitié du vingtième siècle sur l’ensemble de la France. Les produits sont accessibles, gratuitement la plupart du temps, à l’adresse suivante : <a href="https://remonterletemps.ign.fr/">Remonter le temps</a>.</p>
+  <p>Quelques tests de restitution ont ainsi été réalisés sur des produits IGN récents en couleurs naturelles, et historiques panchromatiques. Leurs spécifications sont décrites dans le tableau ci-dessous.</p>
+  <table>
+    <thead>
+      <tr class="header">
+        <th></th>
+        <th>Historique</th>
+        <th>Récent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Année</td>
+        <td>1974</td>
+        <td>2007</td>
+      </tr>
+      <tr class="even">
+        <td>Zone</td>
+        <td>Strasbourg</td>
+        <td>Wangen</td>
+      </tr>
+      <tr class="odd">
+        <td>Bandes</td>
+        <td>PAN</td>
+        <td>R, V, B</td>
+      </tr>
+      <tr class="even">
+        <td>Type de cliché</td>
+        <td>Analogique</td>
+        <td>Numérique</td>
+      </tr>
+      <tr class="odd">
+        <td>Résolution</td>
+        <td>-</td>
+        <td>~0,7m</td>
+      </tr>
+      <tr class="even">
+        <td>Echelle</td>
+        <td>~1/2000</td>
+        <td>-</td>
+      </tr>
+      <tr class="odd">
+        <td>Nombre de clichés</td>
+        <td>4</td>
+        <td>12</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Le processus de restitution photogrammétrique a été effectué sous 3DF Zephyr (version gratuite) pour chaque test. Seul un nuage de points a été généré pour le produit historique, un maillage n’étant ici pas pertinent du fait du nombre de
+    clichés utilisés et des angles de prise de vue. Une étape de post-traitement a été nécessaire sur CloudCompare pour nettoyer certaines parties du nuage. Un maillage et la texture associée ont quant à eux été générés pour les photographies de
+    2007, avec un nettoyage rapide sur Blender.</p>
+  <p>Les résultats sont hebergés sur SketchFab et visibles ci-dessous, pour les photographies historiques puis actuelles.</p>
+  <br>
 
-    <p data-line="26">Les résultats sont hebergés sur SketchFab et visibles ci-dessous.</p>
-    <iframe align="center" src="" id="api-frame-histo" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    <br>
-    <iframe align="center" src="" id="api-frame-recent" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/f32b4472fa6642599511670986903b07/embed?autospin=0.2" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-    <h2 id="Restitution-photogrammetrique-de-NDVI-terrestres" data-line="28">Restitution photogrammétrique de NDVI terrestres</h2>
-    <p data-line="30">Un nuage de points a pu être généré suite à l'acquisition d'une cinquantaine de clichés le 12/02/2017. L'appareil utilisé est une caméra PiNoiR v2. Peu de spéficiations sont disponibles pour celle-ci,
-    mais il semblerait que ses canaux soient les suivants : (PIR, R, V). L'appareil, destiné notamment à être utilisé par les botanistes, permet de récupérer une information sur la quantité de rayonnement proche-infrarouge
-    réfléchie par la végétation. Il semblait donc tout naturel d'essayer de générer tout d'abord un modèle 3D à partir des clichés acquis, puis de calculer un NDVI sur celui-ci.</p>
-    <p>Les images capturées ont toutes été utilisées comme entrées dans la chaîne de traitements photogrammétrique du logiciel COLMAP. A noter que la cinquantaine de clichés n'était ici pas nécessaire ; un nombre inférieur
-    aurait largement suffit compte-tenu des dimensions de la scène. Un résultat de la restitution est visible ci-dessous.</p>
+    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+      <a href="https://sketchfab.com/3d-models/strasbourg-1974-nuage-de-points-f32b4472fa6642599511670986903b07?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Strasbourg 1974 - Nuage de points</a>
+      by <a href="https://sketchfab.com/poterekq67?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">poterekq67</a>
+      on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+    </p>
+  </div>
 
-    <iframe align="center" src="" id="api-frame-pir" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  <br>
 
-    <p>Ce nuage a ensuite été utilisé pour calculer un NDVI tridimensionnel. En effet, à chaque point sont associés trois qui renseignent sur la réflectance dans le PIR, le R et le V.
-    Il est possible, à l'aide de CloudCompare, de récupérer cette information radiométrique puis de calculer un indice de végétation. La formule utilisée est la suivante : NDVI = (PIR-R)/(PIR+R).
-    Les valeurs prises par cet indice normalisé sont comprises entre -1 (absence d'activité chlorophyllienne) et +1 (activité chlorophyllienne importante). Il est important de noter que les clichés utilisés pour créer le nuage de
-    points ont été pris en hiver (12/02/2019), en milieu d'après-midi et avec une nébulosité totale. L'activité chlorophyllienne est donc absente (caducifoliés) ou faible (pelouse, végétation à feuilles non caduques), comme en
-    témoigne le modèle ci-dessous. Le code couleur est le suivant : [ROUGE] NDVI < 0 ; [BEIGE] NDVI ≈ 0 ; [VERT] NDVI > 0, avec un intervalle de valeurs d'environ [-0.25 ; +0.25].</p>
+  <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/5cb9eadb78274d488539eb2a383b2ba5/embed?autospin=0.2" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-    <iframe align="center" src="" id="api-frame-ndvi" allow="autoplay; fullscreen; vr" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    <br>
-  </article>
+    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+      <a href="https://sketchfab.com/3d-models/wangen-restitution-photogrammetrique-5cb9eadb78274d488539eb2a383b2ba5?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Wangen - Restitution photogrammétrique</a>
+      by <a href="https://sketchfab.com/poterekq67?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">poterekq67</a>
+      on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+    </p>
+  </div>
 
-  <!-- Initialize the viewer -->
-  <script type="text/javascript">
-  var iframe = document.getElementById( 'api-frame-histo' );
-  var uid = 'f32b4472fa6642599511670986903b07';
-  var client = new Sketchfab( iframe );
-  client.init( uid, {
-      success: function onSuccess( api ){
-          api.start();
-          api.addEventListener( 'viewerready', function() {
+  <br>
+  <h2 id="restitution-photogrammétrique-de-ndvi-terrestres">Restitution photogrammétrique de NDVI terrestres</h2>
+  <p>Dans la continuité des tests préliminaires, un modèle 3D a été généré à partir de clichés terrestres cette fois-ci. Ils ont été acquis avec la caméra Pi NoIR v2 vendue par la fondation Raspberry Pi. Basée sur le capteur IMX219 de Sony, la NoIR
+    v2 est capable de prendre des clichés dans le proche infrarouge. Peu d’informations sont malheureusement disponibles sur la gamme de longueurs d’onde à laquelle est sensible la caméra. Suite à des tests réalisés par quelques internautes, il
+    semblerait que la portion du proche infrarouge située entre 750 et 1000nm soit capturée (<a href="https://www.raspberrypi.org/forums/viewtopic.php?t=131384">NOIR camera sensitivity - Raspberry Pi Forums</a>, <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=43&amp;t=60103">Pi-Noir IR light recommendations - Raspberry Pi Forums</a>).
+    Nous pouvons donc supposer que les canaux sont distribués de la sorte : [1] Proche infrarouge, [2] Rouge, [3] Vert.</p>
+  <p>Une cinquantaine de clichés a ainsi été acquise le 12/02/2017, utilisées en entrée dans la chaîne de traitements photogrammétrique du logiciel COLMAP. Un nombre inférieur d’images aurait ici largement suffit compte-tenu des dimensions de la
+    scène. Un résultat de la restitution est visible ci-dessous.</p>
+  <br>
 
-              // API is ready to use
-              // Insert your code here
-              console.log( 'Viewer is ready' );
+  <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/27be8033405b4353aa17ca76d814935a/embed?autospin=0.2" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-          } );
-      },
-      error: function onError() {
-          console.log( 'Viewer error' );
-      }
-  } );
+    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+      <a href="https://sketchfab.com/3d-models/restitution-pinoir-v2-27be8033405b4353aa17ca76d814935a?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Restitution PiNoiR v2</a>
+      by <a href="https://sketchfab.com/poterekq67?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">poterekq67</a>
+      on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+    </p>
+  </div>
 
-  var iframeRecent = document.getElementById( 'api-frame-recent' );
-  var uidRecent = '5cb9eadb78274d488539eb2a383b2ba5';
-  var clientRecent = new Sketchfab( iframeRecent );
-  clientRecent.init( uidRecent, {
-      success: function onSuccess( api ){
-          api.start();
-          api.addEventListener( 'viewerready', function() {
+  <br>
+  <p>Ce nuage a ensuite été utilisé pour calculer un NDVI tridimensionnel. En effet, à chaque point sont associés trois attributs qui renseignent sur la réflectance dans le PIR, le R et le V. Il est possible, à l’aide de CloudCompare, de récupérer
+    cette information radiométrique puis de calculer un indice de végétation. La formule utilisée est la suivante : <span class="math inline"><em>N</em><em>D</em><em>V</em><em>I</em> = (<em>P</em><em>I</em><em>R</em> − <em>R</em>)/(<em>P</em><em>I</em><em>R</em> + <em>R</em>)</span>.
+    Les valeurs prises par cet indice normalisé sont comprises entre <span class="math inline"> − 1</span> (absence d’activité chlorophyllienne) et <span class="math inline"> + 1</span> (activité chlorophyllienne importante). Il est important de
+    noter que les clichés utilisés pour créer le nuage de points ont été pris en hiver (12/02/2019), en milieu d’après-midi et avec une nébulosité totale. L’activité chlorophyllienne est donc absente (caducifoliés) ou faible (pelouse, végétation à
+    feuilles non caduques), comme en témoigne le modèle ci-dessous. Compte-tenu de ces points, une nouvelle acquisition sera réalisée plus tard dans l’année, durant le printemps ou l’été, afin d’évaluer les capacités du capteur.</p>
+  <p>La palette de couleurs utilisée pour le NDVI est la suivante <span id='ndvi-ramp'></span></p>
+  <br>
 
-              // API is ready to use
-              // Insert your code here
-              console.log( 'Viewer is ready' );
+  <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/3aeb6d20b313429ab198d16a98b7fed4/embed?autospin=0.2" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-          } );
-      },
-      error: function onError() {
-          console.log( 'Viewer error' );
-      }
-  } );
+    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+      <a href="https://sketchfab.com/3d-models/ndvi-restitution-pinoir-v2-3aeb6d20b313429ab198d16a98b7fed4?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">NDVI - Restitution PiNoiR v2</a>
+      by <a href="https://sketchfab.com/poterekq67?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">poterekq67</a>
+      on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+    </p>
+  </div>
 
-  var iframeRecent = document.getElementById( 'api-frame-pir' );
-  var uidRecent = '27be8033405b4353aa17ca76d814935a';
-  var clientRecent = new Sketchfab( iframeRecent );
-  clientRecent.init( uidRecent, {
-      success: function onSuccess( api ){
-          api.start();
-          api.addEventListener( 'viewerready', function() {
+  <br>
+  <p>Il est important de noter que les indices de végétation développés en télédétection et observation de la Terre ont été conçus initialement pour des produits acquis depuis le ciel ou l’espace, selon un axe vertical. Il serait donc pertinent de
+    vérifier l’exactitude des valeurs obtenues pour le modèle 3D, et de les comparer à celles calculées sur des données plus classiquement utilisées, comme par exemple de la photographie aérienne. Cela fera l’objet d’un prochain article.</p>
 
-              // API is ready to use
-              // Insert your code here
-              console.log( 'Viewer is ready' );
 
-          } );
-      },
-      error: function onError() {
-          console.log( 'Viewer error' );
-      }
-  } );
-
-  var iframeRecent = document.getElementById( 'api-frame-ndvi' );
-  var uidRecent = '3aeb6d20b313429ab198d16a98b7fed4';
-  var clientRecent = new Sketchfab( iframeRecent );
-  clientRecent.init( uidRecent, {
-      success: function onSuccess( api ){
-          api.start();
-          api.addEventListener( 'viewerready', function() {
-
-              // API is ready to use
-              // Insert your code here
-              console.log( 'Viewer is ready' );
-
-          } );
-      },
-      error: function onError() {
-          console.log( 'Viewer error' );
-      }
-  } );
-  </script>
 </body>
 
 </html>
