@@ -269,6 +269,7 @@ h3:after{
   display: -webkit-flex;
   display: flex;
 
+  flex-flow: row wrap;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
   justify-content: space-evenly;
@@ -339,7 +340,7 @@ h3:after{
   filter: grayscale(100%) blur(2px);
 }
 
-#img-pro-11:hover, #img-pro-21:hover, #img-pro-31:hover, #img-pro-41:hover, #img-per-21:hover, #img-uni-11:hover, #img-uni-21:hover {
+#img-pro-11:hover, #img-pro-21:hover, #img-pro-31:hover, #img-pro-41:hover, #img-per-21:hover {
   -webkit-filter: grayscale(100%) blur(0px);
   filter: grayscale(100%) blur(0px);
   transition: all 0.5s;
