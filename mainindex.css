@@ -334,7 +334,7 @@ h3:after{
   transition: all 0.5s;
 }
 
-#img-pro-11, #img-pro-21, #img-pro-31, #img-pro-41, #img-per-21, #img-uni-11, #img-uni-21 {
+#img-pro-11, #img-pro-21, #img-pro-31, #img-pro-41, #img-per-21 {
   -webkit-filter: grayscale(100%) blur(2px);
   filter: grayscale(100%) blur(2px);
 }
